@@ -1,6 +1,6 @@
-import { WebComponent } from "../../core/models/web-component";
+import { Component } from "../../core/models/component/component.model";
 
-export class Card extends WebComponent {
+export class Card extends Component {
   constructor() {
     super("./card.component.html", "./card.style.css", import.meta.url);
   }

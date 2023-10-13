@@ -1,12 +1,12 @@
-export class WebComponent extends HTMLElement {
-  htmlPath = "";
-  cssPath = "";
-  constructor(html, css = "", base = import.meta.url) {
+export class Component extends HTMLElement {
+  constructor(html, css = "", base = import.meta.url, options) {
     super();
+    this.options = options;
     this.htmlPath = this.resolveUrl(html, base);
     this.cssPath = this.resolveUrl(css, base);
   }
   connectedCallback() {
+  
     this.render(this.html, this.base);
   }
   async renderContext(htmlContent) {
