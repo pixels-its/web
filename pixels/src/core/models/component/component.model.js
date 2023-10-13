@@ -18,7 +18,6 @@ export class Component extends HTMLElement {
    */
   constructor(html, css = "", base = import.meta.url) {
     super();
-    this.options = options;
     this.htmlPath = this.resolveUrl(html, base);
     this.cssPath = this.resolveUrl(css, base);
   }
