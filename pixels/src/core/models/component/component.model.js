@@ -1,12 +1,28 @@
+/**
+ * Crea un componente web,
+ * Lee el archivo html y lo renderiza.
+ * @example
+     class Carousel extends Component{
+          constructor(){
+            super("./carousel.component.html","./carousel.component.css",import.meta.url)
+          }
+      }
+ */
 export class Component extends HTMLElement {
-  constructor(html, css = "", base = import.meta.url, options) {
+  /**
+   *
+   * @param {string} html - ruta del archivo html
+   * @param {string} css - ruta del archivo css
+   * @param {string} base - ruta absoluta del archivo
+  
+   */
+  constructor(html, css = "", base = import.meta.url) {
     super();
     this.options = options;
     this.htmlPath = this.resolveUrl(html, base);
     this.cssPath = this.resolveUrl(css, base);
   }
   connectedCallback() {
-  
     this.render(this.html, this.base);
   }
   async renderContext(htmlContent) {
@@ -22,7 +38,6 @@ export class Component extends HTMLElement {
     try {
       const cssContent = `@import url(${this.cssPath})`;
 
-      // Inserta el contenido del archivo CSS en el shadow DOM como una etiqueta <style>
       const style = document.createElement("style");
       style.textContent = cssContent;
       this.appendChild(style);
@@ -43,6 +58,13 @@ export class Component extends HTMLElement {
       console.error("Fallo al cargar componente:", error);
     }
   }
+  /**
+   * Registra el componente para utilizarlo en un archivo html.
+   *
+   * @param {String} componentName - Nombre del componente que se utilizará en el html
+   * @param {Component} component - Clase a registrar
+   *
+   */
   static register = (componentName, component) =>
     window.customElements.define(componentName, component);
 }
