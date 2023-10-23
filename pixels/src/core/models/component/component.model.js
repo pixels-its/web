@@ -11,22 +11,24 @@
 export class Component extends HTMLElement {
   /**
    *
-   * @param {string} html - ruta del archivo html
-   * @param {string} css - ruta del archivo css
+   * @param {ComponentOptions} options - Configuraciones del componente
    * @param {string} base - ruta absoluta del archivo
   
    */
-  constructor(html, css = "", base = import.meta.url) {
+  constructor(base, options) {
     super();
-    this.htmlPath = this.resolveUrl(html, base);
-    this.cssPath = this.resolveUrl(css, base);
+    this.htmlPath = this.resolveUrl(options.html, base);
+    this.cssPath = this.resolveUrl(options.css, base) ?? "";
+    this.jsPath = this.resolveUrl(options.js, base) ?? "";
   }
   connectedCallback() {
     this.render(this.html, this.base);
   }
   async renderContext(htmlContent) {
     this.innerHTML = htmlContent;
-    await this.linkCss();
+    if (this.options && this.options.css) await this.linkCss();
+
+    if (this.options && this.options.js) await this.linkJs();
   }
   resolveUrl(relativePath, base) {
     const relativeURL = new URL(relativePath, base);
@@ -40,6 +42,16 @@ export class Component extends HTMLElement {
       const style = document.createElement("style");
       style.textContent = cssContent;
       this.appendChild(style);
+    } catch (error) {
+      console.error("Error al cargar el archivo CSS:", error);
+    }
+  }
+  async linkJs() {
+    try {
+      const script = document.createElement("script");
+      script.src = this.jsPath;
+      script.type = "module";
+      this.appendChild(script);
     } catch (error) {
       console.error("Error al cargar el archivo CSS:", error);
     }
