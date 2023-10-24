@@ -7,7 +7,7 @@ export class Navbar extends Component {
 
       {
         html: "./navbar.component.html",
-        css: "./navbar.style.css",
+        css: ".navbar.style.css",
       }
     );
   }
