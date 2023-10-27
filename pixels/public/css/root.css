@@ -1,9 +1,0 @@
-/*
-* Este archivo es el contenedor de las variables globales de css.
-* Acá se declaran atributos que se repiten durante toda la hoja.
-* Se utiliza con el fin de evitar por ejemplo, declarar el mismo 
-* tono de color más de dos veces.
-*/
-:root {
-  --brand-primarycolor: #ffff;
-}
