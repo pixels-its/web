@@ -31,10 +31,9 @@ h1 {
 }
 
 #logoPixels {
-  width: 180px;
-  height: 60px;
-  margin-top: 0px;
-  padding-top: 0px;
+  width: 130px;
+  height: 54px;
+  margin-left: 50px;
 }
 
 a {
@@ -54,15 +53,6 @@ a {
 
 .container_logos {
   text-align: right;
-}
-
-.navbar {
-  padding: 0px;
-  margin: 0px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
