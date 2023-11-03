@@ -1,14 +1,13 @@
 import { Component } from "../../core/models/component/component.model";
 
-export class Pie extends Component {
+export class Footer extends Component {
   constructor() {
     super(
       import.meta.url,
 
       {
-        html: "./pie.component.html",
-        css: "./pie.style.css",
-        
+        html: "./Footer.component.html",
+        // css: "./Footer.style.css",
       }
     );
   }
