@@ -23,15 +23,34 @@ const mapProducts = () => {
 };
 
 const createCard = (productData) => {
-  const { id, productName, productDescription, productPrice } = productData;
+  const {
+    id,
+    productName,
+    productDescription,
+    productPrice,
+    rating,
+    productThumbnail,
+  } = productData;
+  const getRating = () => {
+    let starsHTML = "";
+
+    for (let index = 0; index < rating; index++) {
+      starsHTML += `<h6 class="px-star-color"><i class="bi bi-star-fill"></i></h6>`;
+    }
+
+    return starsHTML;
+  };
   const card = $.createElement("div");
   card.setAttribute("class", "px-card border my-4 mx-2 shadow");
   card.setAttribute("id", id);
   card.innerHTML = `
-    <img loading="lazy" src="https://picsum.photos/512/200" class="px-card-image" alt="${productName}">
+    <img loading="lazy" src="${productThumbnail}" class="px-card-image" alt="${productName}">
      <div class="px-card-body p-4">
-            <h4>RTX 3090</h4>
-            <div class="stars my-2">⭐️⭐️⭐️⭐️</div>
+            <h5>${productName}</h5>
+            <div class="d-flex my-2">
+         
+        ${getRating()}
+            </div>
             <small>
               ${productDescription.substring(0, 120)}...
             </small>

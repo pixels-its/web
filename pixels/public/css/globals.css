@@ -7,3 +7,6 @@
 .px-tx-primary {
   color: var(--px-text-primary-color);
 }
+.px-star-color {
+  color: var(--px-rating-style-color);
+}
