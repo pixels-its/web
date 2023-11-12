@@ -1,0 +1,9 @@
+.px-tx-color {
+  color: var(--px-text-color);
+}
+.px-tx-light {
+  color: var(--px-text-color-light);
+}
+.px-tx-primary {
+  color: var(--px-text-primary-color);
+}

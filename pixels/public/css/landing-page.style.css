@@ -6,10 +6,10 @@
 }
 
 .px-input {
-  border: solid 0.5;
+  border: solid 0.5px;
   border-color: var(--px-border-color-light);
   border-radius: 4rem;
-  padding: 1% 4% 1% 4%;
+  padding: .8% 10% .8% 0%;
   color: var(--px-text-color-light);
 }
 
