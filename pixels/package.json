@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "create-vite": "^4.4.1",
     "vite": "^4.4.5"
   }
 }
