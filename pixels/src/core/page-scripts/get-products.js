@@ -2,19 +2,22 @@ import { SeedService } from "../services/seed.service";
 import { Handlers } from "../models/handlers/handlers";
 
 const $ = document; // Guardo el dom en una variable
+const categoria = $.getElementById("filterSelect"); //Guardo el Select para filtrar busquedas segun el tipo de producto
+const inputText = $.getElementById("filterText"); //Guardo el input type text para filtrar busquedas segun el tipo nombre del producto
 const handlers = new Handlers(); // Manejadores de eventos y obtención de elementos
 const seeds = new SeedService();
 const products = seeds.get("products");
 const main = () => {
   const bodyContainer = handlers.getElement("body-container");
-  const productsContainer = $.createElement("div");
+  let productsContainer = $.createElement("div");
   productsContainer.setAttribute("id", "productsContainer");
   productsContainer.setAttribute("class", "card-group justify-content-center");
   bodyContainer.appendChild(productsContainer);
+  const categoria = document.getElementById("filterSelector");
 };
 
 const mapProducts = () => {
-  const productsContainer = handlers.getElement("productsContainer");
+  let productsContainer = handlers.getElement("productsContainer");
 
   products.map((product) => {
     const card = createCard(product);
@@ -68,3 +71,66 @@ const createCard = (productData) => {
   main();
   mapProducts();
 })();
+
+//Vacia el contenedor de los productos y coloca los productos segun sus categorias
+function createfiltereddivsByCategory(category) {
+  productsContainer.innerHTML = "";
+
+  products.map((product) => {
+    if (product.category == category) {
+      const card = createCard(product);
+      productsContainer.appendChild(card);
+    }
+  });
+}
+//Vacia el contenedor de los productos y coloca los productos por nombre
+function createfiltereddivsByName(text) {
+  productsContainer.innerHTML = "";
+
+  products.map((product) => {
+    if (product.productName.includes(text)) {
+      const card = createCard(product);
+      productsContainer.appendChild(card);
+    }
+  });
+}
+//Le agrego la funcion al input text y un event listener que verifique su valor en tiempo real
+inputText.addEventListener("input", function (event) {
+  createfiltereddivsByName(inputText.value);
+});
+
+//le agrego la funcion al select y un event listener para que verifique su valor cada vez que cambia
+categoria.addEventListener("change", function () {
+  switch (categoria.value) {
+    case "cpu":
+      createfiltereddivsByCategory("cpu");
+      break;
+
+    case "gpu":
+      createfiltereddivsByCategory("gpu");
+      break;
+
+    case "perif":
+      createfiltereddivsByCategory("perif");
+      break;
+
+    case "mem":
+      createfiltereddivsByCategory("mem");
+      break;
+
+    case "ram":
+      createfiltereddivsByCategory("ram");
+      break;
+
+    case "mother":
+      createfiltereddivsByCategory("mother");
+      break;
+
+    case "sof":
+      createfiltereddivsByCategory("sof");
+      break;
+
+    default:
+      mapProducts();
+  }
+});
