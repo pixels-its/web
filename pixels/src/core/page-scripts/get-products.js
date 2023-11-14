@@ -60,7 +60,7 @@ const createCard = (productData) => {
           <hr/>
               <div class="d-flex justify-content-between my-auto">
               <p class="text-sm my-auto">ARS: $${productPrice}</p>
-              <button class="btn text-sm text-primary">Comprar</button>
+              <button class="btn text-sm text-primary" id="${id}">Comprar</button>
             </div>
           </div>`;
   return card;
@@ -97,6 +97,7 @@ function createfiltereddivsByName(text) {
 //Le agrego la funcion al input text y un event listener que verifique su valor en tiempo real
 inputText.addEventListener("input", function (event) {
   createfiltereddivsByName(inputText.value);
+  buttonEvent();
 });
 
 //le agrego la funcion al select y un event listener para que verifique su valor cada vez que cambia
@@ -133,4 +134,20 @@ categoria.addEventListener("change", function () {
     default:
       mapProducts();
   }
+  buttonEvent();
 });
+
+//Guardo todos los botones de los productos segun su clase
+const buttons = document.getElementsByClassName("btn text-sm text-primary");
+
+//A cada boton le agrego una funcion de guardar la id del producto donde se encuentra el boton en el localStorage
+function buttonEvent() {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      const actualProduct = products[this.id - 1];
+      localStorage.setItem("productId", actualProduct.id);
+    });
+  }
+}
+
+buttonEvent();
