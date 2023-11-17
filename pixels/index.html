@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <px-bootstrap></px-bootstrap>
-    <link rel="stylesheet" href="public/css/main.css" />
-
+    <link rel="stylesheet" href="./public/css/main.css">
     <title>Pixels</title>
   </head>
 
@@ -27,8 +26,15 @@
       <!-- Options bar -->
       <div id="body-container" class="container">
         <div class="d-flex my-4">
-          <select class="px-input mr-2" name="" id="">
-            <option>Categoría</option>
+          <select class="px-input mr-2" name="" id="filterSelect">
+            <option selected>Categoría</option>
+            <option value="cpu">Procesadores</option>
+            <option value="gpu">Tarjetas Graficas</option>
+            <option value="ram">Memorias RAM</option>
+            <option value="mother">Motherboards</option>
+            <option value="mem">Almacenamiento</option>
+            <option value="perif">Perifericos</option>
+            <option value="sof">Software</option>
           </select>
           <select class="px-input mx-4" name="" id="">
             <option>Ordenar por</option>
@@ -36,7 +42,7 @@
         </div>
         <form action="">
           <div class="position-relative">
-            <input type="text" class="px-input w-100" />
+            <input type="text" class="px-input w-100" id="filterText" />
             <div
               class="d-flex position-absolute my-auto top-0 mt-2 m-4"
               style="right: 0"
