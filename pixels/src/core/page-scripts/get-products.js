@@ -1,5 +1,5 @@
-import { SeedService } from "../services/seed.service";
-import { Handlers } from "../models/handlers/handlers";
+import { SeedService } from "../services/seed.service.js";
+import { Handlers } from "../models/handlers/handlers.js";
 
 const $ = document; // Guardo el dom en una variable
 const categoria = $.getElementById("filterSelect"); //Guardo el Select para filtrar busquedas segun el tipo de producto

@@ -1,4 +1,4 @@
-import { products } from "../seeds/products-seeds";
+import { products } from "../seeds/products-seeds.js";
 
 const mostSold = document.querySelector(".px-most-sold");
 
