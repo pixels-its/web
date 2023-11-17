@@ -9,7 +9,7 @@ exec("mkdir build", (error, stdout, stderr) => {
   console.error(`Errores: ${stderr}`);
 });
 exec(
-  `rsync -av --exclude='vite.config.js' --exclude='.gitignore'--exclude='package.json' --exclude='package-lock.json' --exclude='node_modules' ./ build/`,
+  `rsync -av --exclude='vite.config.js' --exclude='.gitignore'  --exclude='build' --exclude='package.json' --exclude='package-lock.json' --exclude='node_modules' ./ build/`,
   (error, stdout, stderr) => {
     if (error) {
       console.error(`Error al ejecutar el comando: ${error}`);
