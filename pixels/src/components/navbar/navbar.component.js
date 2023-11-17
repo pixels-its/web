@@ -1,4 +1,4 @@
-import { Component } from "../../core/models/component/component.model";
+import { Component } from "../../core/models/component/component.model.js";
 
 export class Navbar extends Component {
   constructor() {
