@@ -1,2 +1,1 @@
-import "./src/components/components";
-import './public/css/main.css'
+import "./src/components/components.js";

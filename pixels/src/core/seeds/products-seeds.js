@@ -1,8 +1,10 @@
 export const products = [
   {
     id: 1,
-    productName: "Tarjeta gráfica NVIDIA GeForce RTX 3080",
     rating: 3,
+    category: "gpu",
+
+    productName: "Tarjeta gráfica NVIDIA GeForce RTX 3080",
     productThumbnail:
       "https://logg.api.cygnus.market/static/logg/Global/Placa%20de%20Video%20MSI%20NVIDIA%20GeForce%20RTX%203080%20Ti%20GAMING%20X%20TRIO%2012GB%20GDDR6X%20RGB%20c/%20Bracket%20+%20SPIDER-MAN/c6f884bfc3984bd8b8e51c18dafaa01b.webp",
     productDescription:
@@ -12,6 +14,7 @@ export const products = [
   {
     id: 2,
     rating: 2,
+    category: "perif",
 
     productName: "Monitor Gaming Acer Predator X27",
     productThumbnail:
@@ -23,6 +26,7 @@ export const products = [
   {
     id: 3,
     rating: 5,
+    category: "perif",
 
     productName: "Teclado mecánico RGB Corsair K95 Platinum XT",
     productThumbnail:
@@ -34,6 +38,7 @@ export const products = [
   {
     id: 4,
     rating: 4,
+    category: "mem",
 
     productName: "SSD Samsung 970 EVO Plus 1TB",
     productThumbnail:
