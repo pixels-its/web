@@ -18,7 +18,7 @@ createRandomProducts();
 console.log(mostSold);
 
 const mapProducts = () => {
-  chosenProducts.map((product) => {
+  products.slice(0,3).map((product) => {
     const card = createCard(product);
     mostSold.appendChild(card);
   });
