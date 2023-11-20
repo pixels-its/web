@@ -1,4 +1,4 @@
-import { products } from "../seeds/products-seeds";
+import { products } from "../seeds/products-seeds.js";
 
 const mostSold = document.querySelector(".px-most-sold");
 
@@ -15,7 +15,6 @@ function createRandomProducts() {
 }
 
 createRandomProducts();
-console.log(mostSold);
 
 const mapProducts = () => {
   products.slice(0,3).map((product) => {
@@ -59,10 +58,25 @@ const createCard = (productData) => {
           <hr/>
               <div class="d-flex justify-content-between my-auto">
               <p class="text-sm my-auto">ARS: $${productPrice}</p>
-              <button class="btn text-sm text-primary">Comprar</button>
+              <button class="btn text-sm text-primary" id="${id}">Comprar</button>
             </div>
           </div>`;
   return card;
 };
 
 mapProducts();
+
+//Guardo todos los botones de los productos segun su clase
+const buttons = document.getElementsByClassName("btn text-sm text-primary");
+
+//A cada boton le agrego una funcion de guardar la id del producto donde se encuentra el boton en el localStorage
+function buttonEvent() {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      const actualProduct = products[this.id - 1];
+      localStorage.setItem("productId", actualProduct.id);
+    });
+  }
+}
+
+buttonEvent();
