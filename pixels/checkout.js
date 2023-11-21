@@ -1,4 +1,13 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+import { Handlers } from "./src/core/models/handlers/handlers"
+   const handlers  = new handlers();
+
+   const 
+
+  
+  const goToMercadoPago = ()=>{
+    window.location.replace("https://www.mercadopago.com/mla/checkout/start?pref_id=389")
+    };
+
 (() => {
   'use strict'
 
