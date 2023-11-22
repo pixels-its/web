@@ -1,8 +1,5 @@
 import { Handlers } from "./src/core/models/handlers/handlers"
    const handlers  = new handlers();
-
-   const 
-
   
   const goToMercadoPago = ()=>{
     window.location.replace("https://www.mercadopago.com/mla/checkout/start?pref_id=389")

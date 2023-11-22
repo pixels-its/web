@@ -4,7 +4,7 @@
 }
 
 .payment-form.dark{
-	background-color: #f6f6f6;
+	background-color: #fcfcfc;
 }
 
 .payment-form .content{
@@ -138,4 +138,6 @@
   	.payment-form .card-details button {
     	margin-top: 2em; 
     } 
+    
 }
+
