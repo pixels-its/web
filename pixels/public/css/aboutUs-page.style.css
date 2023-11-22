@@ -16,6 +16,7 @@ img{
 }
 
 .subtitle{
+    font-family: 'Roboto'; 
     display: flex;
     padding: 75px 65px 50px;
     height: 55px;
