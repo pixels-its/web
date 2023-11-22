@@ -1,13 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: var(--bs-body-font-family);
-}
-
 .container-title{
     background: #b6c8c7;
     width: 100%;
@@ -15,12 +5,8 @@ body{
     flex-shrink: 0;
 }
 p{
-    color: var(--Secondary-Color, #808080);
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    color: var(--secondary-Color);
+
 }
 
 img{
@@ -40,13 +26,8 @@ img{
 
 .subtitle h2{
    
-    color: var(--Primary-Color, #004958);
     text-align: center;
-    font-family: Roboto;
-    font-size: 45px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+
 }
 .mision{
     display: flex;
@@ -57,12 +38,9 @@ img{
 }
 
 .mision p{
-    color: var(--Secondary-Color, #808080);
     text-align: right;
     font-size: 25px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 
 .vision{
@@ -74,11 +52,7 @@ img{
 }
 
 .vision p{
-    color: var(--Secondary-Color, #808080);
     font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .selection-products{
@@ -91,9 +65,5 @@ img{
 }
 
 .selection-products p{
-    color: var(--Secondary-Color, #808080);
     font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
