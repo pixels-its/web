@@ -5,7 +5,7 @@
     flex-shrink: 0;
 }
 p{
-    color: var(--secondary-Color);
+color: var(--px-secondary-color);
 
 }
 
@@ -22,12 +22,14 @@ img{
     height: 55px;
     flex-direction: column;
     justify-content: center;
-    flex-shrink: 0;
+    
 }
 
 .subtitle h2{
-   
+   color: var(--px-primary-color);
     text-align: center;
+    font-size: 35px;
+    font-weight: 600;
 
 }
 .mision{
