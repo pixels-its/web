@@ -1,0 +1,30 @@
+.px-box {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 20%;
+}
+
+.px-input {
+  border: solid 0.5px;
+  border-color: var(--px-border-color-light);
+  border-radius: 4rem;
+  padding: .8% 10% .8% 0%;
+  color: var(--px-text-color-light);
+}
+
+.px-card {
+  width: 18rem;
+  border-radius: 1rem;
+}
+
+.px-card-image {
+  border: solid 0.5;
+  border-color: var(--px-border-color-light);
+  padding-right: 2px;
+  width: 18rem;
+  height: 150px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-color: var(--px-border-color-light);
+}

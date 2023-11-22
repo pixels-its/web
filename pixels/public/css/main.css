@@ -1,1 +1,5 @@
-@import url("../../src/components/Footer/Footer.style.css");
+@import url("./root.css");
+@import url("./products-page.style.css");
+@import url("./landing-page.style.css");
+@import url("./globals.css");
+@import url("./contacto.css");

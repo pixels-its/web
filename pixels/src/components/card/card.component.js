@@ -1,4 +1,4 @@
-import { Component } from "../../core/models/component/component.model";
+import { Component } from "../../core/models/component/component.model.js";
 
 export class Card extends Component {
   constructor() {
@@ -7,8 +7,6 @@ export class Card extends Component {
 
       {
         html: "./card.component.html",
-        css: "./card.style.css",
-        js: "./scripts/click-console.js",
       }
     );
   }
