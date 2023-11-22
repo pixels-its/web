@@ -17,7 +17,7 @@ function createRandomProducts() {
 createRandomProducts();
 
 const mapProducts = () => {
-  products.slice(0,3).map((product) => {
+  chosenProducts.map((product) => {
     const card = createCard(product);
     mostSold.appendChild(card);
   });
@@ -75,9 +75,9 @@ function buttonEvent() {
     buttons[i].addEventListener("click", function () {
       const actualProduct = products[this.id - 1];
       localStorage.setItem("productId", actualProduct.id);
-      window.location.href = "./simple-product.html"
-    })
+      window.location.href = "./simple-product.html";
+    });
   }
-};
+}
 
 buttonEvent();

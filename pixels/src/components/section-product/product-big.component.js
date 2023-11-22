@@ -1,23 +1,7 @@
-import { Component } from "../../core/models/component/component.model.js";
 import { products } from "../../core/seeds/products-seeds.js";
 import { LocalStorageService } from "../../core/services/local-storage.service.js";
 
-export class ProductBig extends Component {
-  constructor() {
-    super(
-      import.meta.url,
-
-      {
-        html: "./product-big.component.html",
-      }
-    );
-  }
-}
-
-// llamo al input
-const inputCantidad = document.getElementById("quantity");
-
-// llamamos a los productos
+// llamamos a las etiquetas donde estaran las propiedades del procuto
 
 const title = document.getElementById("title");
 const star = document.getElementById("star");
@@ -25,6 +9,8 @@ const description = document.getElementById("description");
 const stock = document.getElementById("stock");
 const price = document.getElementById("productPrice");
 const imagen = document.getElementById("image");
+const boton = document.getElementById("btn");
+const inputKart = document.getElementById("quantity");
 
 // capturamos id del producto
 const productId = LocalStorageService.get("productId");
@@ -36,21 +22,35 @@ products.map((product) => {
   }
 });
 
-console.log(productAMostrar);
+//transferimos las propiedades el producto a las etiquetas del html
+const cantidadStock = Math.floor(Math.random() * 10) + 1;
 title.innerText = productAMostrar.productName;
 description.innerText = productAMostrar.productDescription;
-stock.innerHTML = `Stock disponible: ${Math.floor(Math.random() * 10) + 1}`;
+stock.innerHTML = `Stock disponible: ${cantidadStock}`;
 price.innerText = `$${productAMostrar.productPrice}`;
-imagen.src =
-  "https://logg.api.cygnus.market/static/logg/Global/Placa%20de%20Video%20MSI%20NVIDIA%20GeForce%20RTX%203080%20Ti%20GAMING%20X%20TRIO%2012GB%20GDDR6X%20RGB%20c/%20Bracket%20+%20SPIDER-MAN/c6f884bfc3984bd8b8e51c18dafaa01b.webp";
+imagen.src = productAMostrar.productThumbnail;
 
-// function añadircarrito() {
-//   if (inputCantidad.value <= 0) {
-//     alert("No podes comprar 0 productos");
-//   } else {
-//     localStorage.setItem("cantidadProductoCarrito", inputCantidad.value);
-//     stock = stock--;
-//   }
-
-//   localStorage.setItem("productoCarrito", productAMostrar);
-// }
+//añadimos funcion al boton "Añadir al carro" de guardar que producto compraste, su cantidad y el total de la compra
+boton.addEventListener("click", function () {
+  if (inputKart.value <= 0 || inputKart.value > cantidadStock) {
+    alert(
+      "No podes comprar 0 productos o mas productos de los que tenemos en stock"
+    );
+  } else {
+    localStorage.setItem("cantidadProductoCarrito", inputKart.value);
+    localStorage.setItem(
+      "totalProductoCarrito",
+      inputKart.value * productAMostrar.productPrice
+    );
+    localStorage.setItem("productoCarrito", productAMostrar.id);
+    alert(
+      `mandaste al carrito el producto ${
+        productAMostrar.productName
+      } con un total de ${
+        inputKart.value
+      } unidades, el total de tu compra es de ${
+        inputKart.value * productAMostrar.productPrice
+      }`
+    );
+  }
+});
