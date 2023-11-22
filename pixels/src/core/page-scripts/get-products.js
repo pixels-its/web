@@ -146,8 +146,9 @@ function buttonEvent() {
     buttons[i].addEventListener("click", function () {
       const actualProduct = products[this.id - 1];
       localStorage.setItem("productId", actualProduct.id);
-    });
-  }
+      window.location.href = "./simple-product.html"
+    })
+    
 }
-
+};
 buttonEvent();
