@@ -1,4 +1,4 @@
-import { Component } from "../../core/models/component/component.model";
+import { Component } from "../../core/models/component/component.model.js";
 
 export class Footer extends Component {
   constructor() {
@@ -6,8 +6,7 @@ export class Footer extends Component {
       import.meta.url,
 
       {
-        html: "./Footer.component.html",
-        // css: "./Footer.style.css",
+        html: "./footer.component.html",
       }
     );
   }
