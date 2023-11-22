@@ -10,3 +10,7 @@
 .px-star-color {
   color: var(--px-rating-style-color);
 }
+
+.px-ft-stsize {
+  font-size: 16pt;
+}
