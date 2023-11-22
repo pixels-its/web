@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#imagen-formulario{
+    width: 100%;
+    height: auto;
+}
+/*9e2fc4*/
+#color-submit{
+    background-color: #004958;
+}
+
+#exampleFormControlTextarea1{
+    height: 166px;
+}
+
+#nombre{
+    font-size: 17.64px;
+}
+#apellido{
+    font-size: 17.64px;
+}
+#motivo{
+    font-size: 17.64px;
+}
