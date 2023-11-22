@@ -1,9 +1,28 @@
-import { Handlers } from "./src/core/models/handlers/handlers"
-   const handlers  = new handlers();
-  
-  const goToMercadoPago = ()=>{
-    window.location.replace("https://www.mercadopago.com/mla/checkout/start?pref_id=389")
-    };
+import { products } from "./src/core/seeds/products-seeds.js";
+
+const productId=localStorage.getItem("productoCarrito")
+let productAMostrar = null;
+products.map((product) => {
+  if (product.id == productId) {
+    productAMostrar = product;
+  }
+});
+ const descripcionProducto = document.getElementById("nombreProducto")
+ descripcionProducto.innerText= productAMostrar.productName;
+
+ const totalProductoCarrito =   localStorage.getItem("productPrice")
+ const precioProducto = document.getElementById("precio")
+ precio.innerText ="$"+ productAMostrar.productPrice;
+
+
+const cantidadStock = localStorage.getItem("cantidadProductoCarrito")
+ const cantidadProductoCarrito = document.getElementById("cantidad")
+ cantidadProductoCarrito.innerText = cantidadStock;
+
+ const totalCarrito = localStorage.getItem("totalProductoCarrito")
+ const totalprecioCarrito = document.getElementById("total")
+ totalprecioCarrito.innerText ="$"+ totalCarrito;
+
 
 (() => {
   'use strict'
@@ -20,6 +39,8 @@ import { Handlers } from "./src/core/models/handlers/handlers"
       }
 
       form.classList.add('was-validated')
+      alert("formulario validado")
     }, false)
   })
-})()
+})
+

@@ -138,6 +138,9 @@
   	.payment-form .card-details button {
     	margin-top: 2em; 
     } 
-    
+ 
+	.container{
+		margin-top:50px;
+	}
 }
 
