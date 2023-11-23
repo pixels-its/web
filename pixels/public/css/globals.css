@@ -1,3 +1,6 @@
+.px-bg-primary {
+  background-color: var(--px-primary-color);
+}
 .px-tx-color {
   color: var(--px-text-color);
 }
