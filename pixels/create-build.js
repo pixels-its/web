@@ -1,5 +1,4 @@
-import { exec } from "child_process";
-
+const {exec} = require("child_process");
 // Comando para eliminar el directorio "build"
 exec("rm -rf build", (error, stdout, stderr) => {
   if (error) {
