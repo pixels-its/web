@@ -14,8 +14,6 @@ function createRandomProducts() {
   }
 }
 
-createRandomProducts();
-
 const mapProducts = () => {
   chosenProducts.map((product) => {
     const card = createCard(product);
@@ -64,12 +62,9 @@ const createCard = (productData) => {
   return card;
 };
 
-mapProducts();
-
 //Guardo todos los botones de los productos segun su clase
-const buttons = document.getElementsByClassName("btn text-sm text-primary");
+const buttons = document.getElementsByClassName("px-text-btn");
 
-//A cada boton le agrego una funcion de guardar la id del producto donde se encuentra el boton en el localStorage
 function buttonEvent() {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
@@ -80,4 +75,8 @@ function buttonEvent() {
   }
 }
 
-buttonEvent();
+(() => {
+  createRandomProducts();
+  mapProducts();
+  buttonEvent();
+})();

@@ -66,12 +66,6 @@ const createCard = (productData) => {
   return card;
 };
 
-//Función auto invocada para iniciar el modulo
-(() => {
-  main();
-  mapProducts();
-})();
-
 //Vacia el contenedor de los productos y coloca los productos segun sus categorias
 function createfiltereddivsByCategory(category) {
   productsContainer.innerHTML = "";
@@ -138,7 +132,7 @@ categoria.addEventListener("change", function () {
 });
 
 //Guardo todos los botones de los productos segun su clase
-const buttons = document.getElementsByClassName("btn text-sm text-primary");
+const buttons = document.getElementsByClassName("px-text-btn");
 
 //A cada boton le agrego una funcion de guardar la id del producto donde se encuentra el boton en el localStorage
 function buttonEvent() {
@@ -146,9 +140,14 @@ function buttonEvent() {
     buttons[i].addEventListener("click", function () {
       const actualProduct = products[this.id - 1];
       localStorage.setItem("productId", actualProduct.id);
-      window.location.href = "./simple-product.html"
-    })
-    
+      window.location.href = "./simple-product.html";
+    });
+  }
 }
-};
-buttonEvent();
+
+//Función auto invocada para iniciar el modulo
+(() => {
+  main();
+  mapProducts();
+  buttonEvent();
+})();
