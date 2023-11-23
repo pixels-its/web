@@ -58,7 +58,7 @@ const createCard = (productData) => {
           <hr/>
               <div class="d-flex justify-content-between my-auto">
               <p class="text-sm my-auto">ARS: $${productPrice}</p>
-              <button class="btn text-sm text-primary" id="${id}">Comprar</button>
+              <button class="px-text-btn text-sm " id="${id}">Ver producto</button>
             </div>
           </div>`;
   return card;

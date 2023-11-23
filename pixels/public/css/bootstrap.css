@@ -8,3 +8,16 @@
   border-color: var(--px-primary-color);
   outline-color: var(--px-primary-color);
 }
+
+.text-primary {
+    color: var(--px-text-color);
+
+}
+a {
+    color: var(--px-text-color);
+
+}
+.btn{
+      color: var(--px-text-color);
+
+}

@@ -114,15 +114,6 @@
   margin-right: 10px;
   margin-top: 5px;
 }
-.px-btn {
-  color: white;
-  background-color: var(--px-primary-color);
-  padding: 1%;
-  outline: none;
-  box-shadow: none;
-  border-color: transparent;
-  border-radius: .5rem;
-}
 
 @media (min-width: 576px) {
   .payment-form .title {
