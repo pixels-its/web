@@ -1,4 +1,4 @@
-import { products } from "../seeds/products-seeds.js";
+import { products } from "../seeds/products.seeds.js";
 
 const mostSold = document.querySelector(".px-most-sold");
 
@@ -70,7 +70,7 @@ function buttonEvent() {
     buttons[i].addEventListener("click", function () {
       const actualProduct = products[this.id - 1];
       localStorage.setItem("productId", actualProduct.id);
-      window.location.href = "./simple-product.html";
+      window.location.href = "./simple-product-page.html";
     });
   }
 }

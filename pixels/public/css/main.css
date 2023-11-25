@@ -1,8 +1,9 @@
 @import url("./root.css");
 @import url("./products-page.style.css");
 @import url("./landing-page.style.css");
-@import url("./globals.css");
-@import url("./cart-styles.css");
-@import url("./contacto.css");
-@import url("./bootstrap.css");
+@import url("./globals.style.css");
+@import url("./cart.style.css");
+@import url("./contacto.style.css");
+@import url("./bootstrap.style.css");
+@import url("./simple-product.style.css");
 @import url("../../src/components/footer/footer.style.css");

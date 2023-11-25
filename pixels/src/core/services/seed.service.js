@@ -1,4 +1,4 @@
-import { products } from "../seeds/products-seeds.js";
+import { products } from "../seeds/products.seeds.js";
 
 /**
  * Trae datos de prueba,

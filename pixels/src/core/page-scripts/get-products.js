@@ -1,5 +1,5 @@
 import { SeedService } from "../services/seed.service.js";
-import { Handlers } from "../models/handlers/handlers.js";
+import { Handlers } from "../models/handlers/handlers.model.js";
 
 const $ = document; // Guardo el dom en una variable
 const categoria = $.getElementById("filterSelect"); //Guardo el Select para filtrar busquedas segun el tipo de producto
@@ -140,7 +140,7 @@ function buttonEvent() {
     buttons[i].addEventListener("click", function () {
       const actualProduct = products[this.id - 1];
       localStorage.setItem("productId", actualProduct.id);
-      window.location.href = "./simple-product.html";
+      window.location.href = "./simple-product-page.html";
     });
   }
 }

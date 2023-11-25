@@ -1,4 +1,4 @@
-import { products } from "../../core/seeds/products-seeds.js";
+import { products } from "../../core/seeds/products.seeds.js";
 import { LocalStorageService } from "../../core/services/local-storage.service.js";
 
 // llamamos a las etiquetas donde estaran las propiedades del procuto
