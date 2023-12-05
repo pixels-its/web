@@ -1,3 +1,6 @@
+.px-bg-primary {
+  background-color: var(--px-primary-color);
+}
 .px-tx-color {
   color: var(--px-text-color);
 }
@@ -13,4 +16,29 @@
 
 .px-ft-stsize {
   font-size: 16pt;
+}
+.px-btn {
+  color: white;
+  background-color: var(--px-primary-color);
+  padding: 1%;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  border-radius: 0.5rem;
+}
+.px-text-btn {
+  background-color: transparent;
+  color: var(--px-primary-color);
+  outline: none;
+  box-shadow: none;
+  border: transparent;
+}
+.px-outline-btn {
+  color: white;
+  background-color: var(--px-primary-color);
+  padding: 1%;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  border-radius: 0.5rem;
 }

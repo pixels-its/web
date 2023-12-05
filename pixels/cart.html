@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="./public/css/main.css" />
+    <px-bootstrap></px-bootstrap>
+  </head>
+  <body class="bg-body-tertiary">
+    <px-navbar></px-navbar>
+    <div class="px-title-container">
+      <h2 class="px-title">Formulario de Pago</h2>
+    </div>
+    <div class="container my-4">
+      <main>
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="px-tx-primary">Carrito</span>
+              <span class="badge px-bg-primary rounded-pill">pixels</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Producto</h6>
+                  <small class="text-body-secondary" id="nombreProducto"
+                    >Descripcion:
+                  </small>
+                </div>
+                <span class="text-body-secondary" id="precio"> $12</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Cantidad</h6>
+                </div>
+                <span class="text-body-secondary" id="cantidad"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (ARS)</span>
+                <strong id="total"></strong>
+              </li>
+            </ul>
+            <hr class="my-4" />
+
+            <button id="comprafinal" class="w-100 px-btn btn-lg" type="submit">
+              Finalizar Compra
+            </button>
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">DATOS DE ENVIOS</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">NOMBRE</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">ingrese un nombre valido</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">APELLIDO</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">ingrese un apellido valido</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="username" class="form-label">Usuario</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      placeholder="Usuario"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      tu nombre de usuario es requerido
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    autocomplete="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="tu@email.com"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Ingrese una dirección de correo electrónico válida para
+                    recibir la factura de compra
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address" class="form-label">Direccion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    placeholder="Pilotto 160"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Por favor ingrese la direccion de envio
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address2" class="form-label"
+                    >Piso/Dpto<span class="text-body-secondary"
+                      >(Optional)</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address2"
+                    placeholder="piso o departamento"
+                  />
+                </div>
+
+                <div class="col-md-5">
+                  <label for="country" class="form-label">Pais</label>
+                  <select class="form-select" id="country" required>
+                    <option value="">....</option>
+                    <option>Argentina</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="state" class="form-label">Provincia</label>
+                  <select class="form-select" id="state" required>
+                    <option value="">....</option>
+                    <option>Buenos Aires</option>
+                    <option>La Pampa</option>
+                    <option>Neuquén</option>
+                    <option>Jujuy</option>
+                    <option>Mendoza</option>
+                    <option>Chubut</option>
+                    <option>La Rioja</option>
+                    <option>Tucuman</option>
+                    <option>Salta</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4" />
+
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="same-address"
+                />
+                <label class="form-check-label" for="same-address"
+                  >La direccion de envio es la misma que mi direccion de
+                  facturacion</label
+                >
+              </div>
+
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="save-info"
+                />
+                <label class="form-check-label" for="save-info"
+                  >Guarda esta informacion para la proxima vez</label
+                >
+              </div>
+
+              <hr class="my-4" />
+
+              <h4 class="mb-3">Forma de Pago:</h4>
+
+              <div class="my-3">
+                <div class="form-check">
+                  <input
+                    id="credito"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    checked
+                    required
+                  />
+                  <label class="form-check-label" for="credito"
+                    >Tarjeta de Credito</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    id="debito"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    checked
+                    required
+                  />
+                  <label class="form-check-label" for="debito"
+                    >Tarjeta de Debito</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    id="mercadoPago"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    checked
+                    required
+                  />
+                  <label class="form-check-label" for="mercadoPago"
+                    >Mercado Pago</label
+                  >
+                </div>
+              </div>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <i class="bi bi-credit-card-2-front-fill"></i>
+                  <label for="cc-name" class="form-label"
+                    >Nombre del titular</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-body-secondary"
+                    >Nombre como figura en su tarjeta</small
+                  >
+                  <div class="invalid-feedback">
+                    Se requiere un nombre valido
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <i class="bi bi-credit-card-2-back-fill"></i>
+                  <label for="cc-number" class="form-label" id="numeroTarjeta"
+                    >Numero de tarjeta
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder="XXXX-XXXX-XXXX-XXXX"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Se requiere número de tarjeta valido
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <i class="bi bi-calendar-check"></i>
+                  <label for="cc-expiration" class="form-label"
+                    >Vencimiento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Fecha de Vencimiento Requerido
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <i class="bi bi-credit-card-fill"></i>
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Codigo de Seguridad Requerido
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <px-footer></px-footer>
+    <script src="checkout.js" type="module"></script>
+  </body>
+</html>
